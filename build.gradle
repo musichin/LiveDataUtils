@@ -1,15 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.4.30'
+    ext.kotlin_version = '1.5.20'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'guru.stefma.bintrayrelease:bintrayrelease:1.0.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,7 +18,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -28,15 +27,14 @@ task clean(type: Delete) {
 }
 
 version = System.getenv("TRAVIS_TAG") ?: 'snapshot'
-group = 'com.github.musichin.reactivelivedata'
+group = 'de.musichin.reactivelivedata'
 description = 'Transformation functions for LiveData'
 
 ext {
-    userOrg = 'musichin'
-    compileSdkVersion = 29
+    compileSdkVersion = 30
     minSdkVersion = 14
-    targetSdkVersion = 29
-    buildToolsVersion = '29.0.3'
+    targetSdkVersion = 30
+    buildToolsVersion = '30.0.3'
     website = 'https://github.com/musichin/reactivelivedata'
     licences = ['MIT']
 }
