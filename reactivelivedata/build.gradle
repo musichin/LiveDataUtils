@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'guru.stefma.bintrayrelease'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -24,22 +23,13 @@ android {
 }
 
 dependencies {
-    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     testImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
 }
 
 version = rootProject.version
 group = rootProject.group
-
-publish {
-    userOrg = rootProject.userOrg
-    desc = rootProject.description
-    artifactId = name
-    uploadName = rootProject.name
-    website = rootProject.website
-    licences = rootProject.licences
-}
